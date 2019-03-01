@@ -2,6 +2,7 @@ import Signup from './../ui/Signup';
 import Login from './../ui/Login';
 import NotFound from './../ui/NotFound';
 import Dashboard from './../ui/Dashboard';
+import Poems from './../ui/Poems';
 import { Router, Route, browserHistory } from 'react-router';
 import React from 'react';
 
@@ -36,6 +37,7 @@ export const routes = (
     <Route path="/" component={Login} onEnter={onEnterPublicPage}/>
     <Route path="/signup" component={Signup} onEnter={onEnterPublicPage}/>
     <Route path="/dashboard" component={Dashboard} onEnter={onEnterPrivatePage}/>
+    <Route path="/my-poems" component={Poems} onEnter={onEnterPrivatePage()}/>
     <Route path="*" component={NotFound}/>
   </Router>
 );

@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { WebApp } from 'meteor/webapp';
+import '../imports/api/poems';
 
 // It executes the file
 import '../imports/api/users';
