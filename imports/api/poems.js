@@ -54,6 +54,7 @@ Meteor.methods({
             body: poem.body,
             isLocked: isLocked,
             contestId: contestId,
+            createdAt: moment().valueOf(),
             updatedAt: moment().valueOf()
         });
     },
@@ -74,11 +75,12 @@ Meteor.methods({
                 type: String,
                 min: 10
             }
-        }).validate(poem.title, poem.body);
+        }).validate(poem);
 
-        Poems.updateOne({
+        Poems.update({
             _id: poem._id,
             userId: this.userId
-        }, { ...poem });
-    }
+        }, { $set: { ...poem } }
+        );
+    },
 });
